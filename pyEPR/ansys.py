@@ -602,7 +602,7 @@ class HfssProject(COMWrapper):
         Args:
             name (str): Name of driven modal design
         """
-        return self.new_design(name, "DrivenModal")
+        return self.new_design(name, "HFSS Modal Network")
 
     def new_em_design(self, name: str):
         """Create a new eigenmode design
@@ -731,7 +731,7 @@ class HfssDesign(COMWrapper):
 
         if self.solution_type == "Eigenmode":
             return HfssEMSetup(self, name)
-        elif self.solution_type == "DrivenModal":
+        elif self.solution_type == "HFSS Modal Network":
             return HfssDMSetup(self, name)
         elif self.solution_type == "DrivenTerminal":
             return HfssDTSetup(self, name)
