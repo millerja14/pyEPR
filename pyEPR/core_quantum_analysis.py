@@ -94,6 +94,7 @@ class HamiltonianResultsContainer(OrderedDict):
         if dict_file is None:
             self.file_name = str(directory / (str(file_name) + self.file_name_extra))
             # logger.info(f'Filename hamiltonian params to {self.file_name }')
+            self.load()
 
         elif isinstance(dict_file, str):
             try:
