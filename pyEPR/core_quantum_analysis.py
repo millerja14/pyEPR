@@ -1082,6 +1082,15 @@ class QuantumAnalysis(object):
         return self.results.vs_variations(
             label, vs=swp_variable, to_dataframe=True, variations=variations
         )
+    
+    def get_frequencies_bare(self, swp_variable='variation', variations: list = None):
+        """return as pd.Series
+            index: eigenmode label
+            columns: variation label
+        """
+        return self.results.vs_variations(
+            'f_0', vs=swp_variable, to_dataframe=True, variations=variations
+        )
 
     def get_quality_factors(self, swp_variable="variation", variations: list = None):
         """return as pd.Series
